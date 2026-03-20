@@ -1,4 +1,4 @@
-let move_speed = 4;
+let move_speed = 3;
 let gravity = 0.5;
 
 const bird = document.querySelector(".bird");
