@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  touch-action: manipulation;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background: url("images/background-img.png") no-repeat center center;
+  background-size: cover;
+}
+
+.bird {
+  position: absolute;
+  width: clamp(48px, 10vw, 95px);
+  height: auto;
+  top: 40%;
+  left: 20%;
+  z-index: 100;
+  display: none;
+}
+
+.pipe_sprite {
+  position: absolute;
+  width: clamp(52px, 10vw, 90px);
+  background: radial-gradient(lightgreen 50%, green);
+  border: 3px solid black;
+  border-radius: 8px;
+}
+
+.message {
+  position: absolute;
+  z-index: 200;
+  left: 50%;
+  top: 28%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  width: min(92vw, 700px);
+  font-size: clamp(1.1rem, 3vw, 2.3rem);
+  line-height: 1.4;
+  padding: 18px 20px;
+}
+
+.message p {
+  margin-top: 10px;
+  font-size: clamp(0.95rem, 2.3vw, 1.25rem);
+}
+
+.message span {
+  color: red;
+  font-weight: bold;
+}
+
+.messageStyle {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+
+.score {
+  position: absolute;
+  z-index: 200;
+  top: 12px;
+  left: 14px;
+  color: white;
+  font-size: clamp(1.4rem, 4vw, 3rem);
+  font-weight: bold;
+  -webkit-text-stroke: 1.5px black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.score_val {
+  color: gold;
+}
+
+@media (max-width: 768px) {
+  .message {
+    top: 32%;
+    width: 90vw;
+  }
+
+  .score {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bird {
+    left: 18%;
+    width: clamp(44px, 12vw, 72px);
+  }
+
+  .pipe_sprite {
+    width: clamp(45px, 12vw, 70px);
+  }
+
+  .message {
+    top: 34%;
+    padding: 14px 16px;
+  }
+}
